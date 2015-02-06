@@ -21,7 +21,7 @@ Quintus.SpringConnection = function(Q) {
 			var e = this.entity;
 			var other = e.p.connection_to;
 			
-			if (!other) {console.log(other); return;};
+			if (!other) {return;};
 			
 			e.p.vy -= (e.p.y - other.p.y) * e.p.spring_stiffness * dt;
 			e.p.vx -= (e.p.x - other.p.x) * e.p.spring_stiffness * dt;

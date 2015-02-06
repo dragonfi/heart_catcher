@@ -15,6 +15,8 @@ window.onload = function() {
 		maximize: true,
 	}).touch(Q.SPRITE_ALL).dragAndDrop();
 	Q.load(["heart1_004.png", "star3_004.png"], function() {
+		Q.sheet("heart", "heart1_004.png");
+		Q.sheet("star", "star3_004.png");
 		Q.stageScene("hearts");
 	});
 };
@@ -22,7 +24,7 @@ window.onload = function() {
 Q.Sprite.extend("Heart", {
 	init: function(p) {
 		this._super(p, {
-			asset: "heart1_004.png",
+			sheet: "heart",
 			x: Q.width / 3,
 			y: Q.height / 3,
 			points: Utils.mirrorx([
@@ -38,7 +40,7 @@ Q.Sprite.extend("Heart", {
 Q.Sprite.extend("Star", {
 	init: function(p) {
 		this._super(p, {
-			asset: "star3_004.png",
+			sheet: "star",
 			x: Q.width / 2,
 			y: Q.height / 2,
 			points: Utils.mirrorx([
